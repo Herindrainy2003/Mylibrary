@@ -1,0 +1,26 @@
+form{
+   display: flex;
+   justify-content: center;
+   margin-top: 50px;
+   gap: 34px;
+   width: 100%;
+   
+}
+
+input{
+    font-size: 20px;
+}
+
+button{
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: rgb(18, 15, 10);
+    color: aliceblue;
+    width: 140px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+button:hover{
+    background-color: blueviolet;
+}

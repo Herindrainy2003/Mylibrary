@@ -1,0 +1,33 @@
+.body{
+    display: flex;
+    gap: 14px;
+    font-size: 20px;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    margin-top: 40px;
+    width: 500px;
+    border: 1px solid #ccc;
+    width: 100%;
+    
+}
+
+.body p{
+     text-transform: capitalize;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p:nth-child(3){
+    cursor: pointer;
+    color: red;
+}
+
+p:nth-child(4){
+    text-align: center;
+    color: red;
+}
+
+h1{
+    text-align: center;
+    margin-top: 30px;
+}
