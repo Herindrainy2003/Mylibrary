@@ -1,16 +1,14 @@
 import React from 'react'
 import Header from '../Modules/Header/Header'
-import AddBook from '../Modules/BookForm/Form'
 import Display from '../Modules/DisplayBook/Display'
-import Layouts from '../Modules/Layouts'
 
-function Aceuil() {
+function Library() {
   return (
     <div>
       <Header />
-      <Layouts />
+      <Display />
     </div>
   )
 }
 
-export default Aceuil
+export default Library

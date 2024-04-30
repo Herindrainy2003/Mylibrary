@@ -16,7 +16,6 @@ function SearchBar() {
     <div>
       <div className="bar">
         <form onSubmit={onSubmitHandle}>
-           <Link to="/">Home</Link>
             <input type="text" placeholder='Recherche' onChange={(e)=>setState(e.target.value)}  />
             <button type='submit'>Rechercher</button>
         </form>

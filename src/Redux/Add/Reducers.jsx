@@ -5,11 +5,13 @@ export const BookReducer = createSlice({
         Books : []
     }, reducers: {
         AddBookReducers : (state, action)=>{
-            state.Books.push(action.payload);
             const oldBooks = JSON.parse(localStorage.getItem('books'))||[];
-            var newBooks = [ ...oldBooks,...state.Books];
-           
-            localStorage.setItem('books', JSON.stringify(newBooks))
+            const tatbleExist = oldBooks.some(book => book.titre === action.payload.titre);
+            if(!tatbleExist){
+                state.Books.push(action.payload);
+                var newBooks = [ ...oldBooks,...state.Books];
+                localStorage.setItem('books', JSON.stringify(newBooks))
+            }
         }
     }
 

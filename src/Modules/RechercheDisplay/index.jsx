@@ -1,3 +1,4 @@
+import { CgSoftwareDownload } from "react-icons/cg"; 
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -5,7 +6,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { AddBookReducers } from '../../Redux/Add/Reducers';
 
+
 function RechercheDisplay() {
+
 
   const Allresult  = useSelector((state)=>state.result.result.items)
   
@@ -25,14 +28,16 @@ function RechercheDisplay() {
     const data = Allresult[index].volumeInfo;
     const auteur = data.authors[0];
     const titre = data.title
-    dispatch(AddBookReducers({titre : titre , auteur : auteur}))
+    const book = {titre , auteur}
+    dispatch(AddBookReducers(book))
   }
  
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap' }}>
       {Allresult ? Allresult.map((element, index) => (
-        <Card key={index} style={{ width: '18rem', margin: '10px' }}  >
-          <Card.Img variant="top" src={element.volumeInfo.imageLinks?.smallThumbnail} />
+     
+       <Card key={index} style={{ width: '18rem', margin: '10px' }}  >
+          <Card.Img variant="top" style={{height : '340px'}} src={element.volumeInfo.imageLinks?.smallThumbnail} />
           <Card.Body>
             <Card.Title>{element.volumeInfo.title}</Card.Title>
             <Card.Text>
@@ -49,7 +54,8 @@ function RechercheDisplay() {
             <Button variant="outline-warning" onClick={()=>AddBook(index)}>Enregistrer</Button>
           </Card.Body>
         </Card>
-      )) : <div style={{textAlign : 'center'}}>Faites votre recherche</div>}
+     
+     )) : <p style={{textAlign : "center"}}>Faites votre recherche</p>}
     </div>
   );
 }

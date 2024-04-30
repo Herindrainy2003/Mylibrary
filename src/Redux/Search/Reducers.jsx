@@ -24,9 +24,11 @@ export const searchSlice = createSlice({
     error: null
   },
   reducers: {},
+  
   extraReducers: (builder) => {
     builder
-      .addCase(searchBooks.pending, (state) => {
+   
+    .addCase(searchBooks.pending, (state) => {
         state.status = 'loading';
       })
       .addCase(searchBooks.fulfilled, (state, action) => {
@@ -38,6 +40,7 @@ export const searchSlice = createSlice({
         state.error = action.error.message;
       });
   }
+  
 });
 
 export const { reducer: searchReducers } = searchSlice;
