@@ -43,7 +43,7 @@ function Display() {
             </div>
         )
       }
-      <p style={{textAlign:'center' , color :'red'}}>REMOVE ALL<RiDeleteBin4Fill  onClick={()=>removeAll()}/></p>
+      <p style={{textAlign:'center' , color :'red'}} onClick={()=>removeAll()} >REMOVE ALL </p>
     </>
 
 

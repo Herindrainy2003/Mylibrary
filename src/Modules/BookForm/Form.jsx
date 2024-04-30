@@ -3,8 +3,8 @@ import "./Form.css"
 import { useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux';
 import { AddBookReducers } from '../../Redux/Add/Reducers';
-import { Navigate, useNavigate } from 'react-router-dom';
-
+import {  useNavigate } from 'react-router-dom';
+import TextField from '@mui/material/TextField';
 function AddBook() {
  //destructing React hook form(useForm)
   const {register , handleSubmit , reset} = useForm();
@@ -20,8 +20,8 @@ function AddBook() {
   return (
     <div>
       <form onSubmit={handleSubmit(submitHandler)}>
-        <input type="text" {...register('titre' , {required : true})} placeholder='Titre' />
-        <input type="text" {...register('auteur' , {required : true})} placeholder='Auteur' />
+      <TextField id="filled-basic" label="Titre" {...register('titre' , {required : true})} variant="filled" />
+      <TextField id="filled-basic" label="Auteur" {...register('auteur' , {required : true})} variant="filled" />
         <button type='submit'>Ajouter</button>
       </form>
     </div>
